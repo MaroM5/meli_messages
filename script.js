@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePopup = document.getElementById('closePopup');
 
     const messages = [
+
+    const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
         "Σ'αγαπώ μέλι, πολύ",
         "If you need to, darling, lean your weight to me We'll float away, but if we fall I only pray, don't fall away from me -I, carrion (Icarian) Hozier",
@@ -86,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Μου αρέσει πολύ κυρίως όταν με λες ψυχή σου ή καρδιά σου που με είπες τις προάλλες όταν κλείσαμε 8 μήνες. Λιώνω ελπίζω να το καταλαβαίνεις",
         "Δίχως τη δική σου αγάπη \nδύσκολα περνά ο καιρός. \nΔίχως τη δική σου αγάπη \nείναι ο κόσμος πιο μικρός. \n- Χάρτινο το φεγγαράκι",
         "Μέλι",
+        "Αχ, να 'ξερες τι δύναμη μου δίνει η δύναμή σου \nΣαν λες όλα θα γίνουνε κι ακούω τη φωνή σου"
         "When I'm with my baby yeah all the bad things disappear - I don't care Ed sheeran (το ακουστικ μου αρέσει περισσότερο, ίσως επειδή είμαι ακουστική, το είχα ανεβάσει και στα notes για εσένα) ",
         "Για να επιβεβαιώσω ότι τα είδες όλα, στείλε μου skibidi toilet",
         "Άπειρα",
@@ -102,29 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
         "Να μ'αγαπας (και εσύ)",
         "Και το it will come back του hozier εχει πολυ honey ",
         "Ti amo",
-        " Melõ wò ",
+        " Melõ wò (σημαίνει σαγαπω σε μια περίεργη γλώσσα, στην έγραψα και στον ανανα με τα πολλά σαγαπω. Μοιάζει με μέλι για αυτό μου άρεσε πολύ και το κράτησα.)",
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
+    ];
 
-    for (let i = 1; i <= 100; i++) {
+    // Loop through all messages and create buttons
+    messages.forEach((message, index) => {
         const button = document.createElement('button');
-        button.textContent = `Button ${i}`;
+        button.textContent = `Button ${index + 1}`;
         button.addEventListener('click', () => {
-            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
+            popupMessage.textContent = message;
             popup.style.display = 'block';
         });
         buttonsContainer.appendChild(button);
-    }
+    });
 
+    // Close popup
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
 
+    // Close popup when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === popup) {
             popup.style.display = 'none';
         }
     });
 });
-
