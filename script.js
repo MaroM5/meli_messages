@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonsContainer = document.getElementById('buttons');
+    const buttonsContainer = document.querySelector('.buttons');
     const popup = document.getElementById('popup');
-    const messageElement = document.getElementById('message');
-    const closeBtn = document.getElementById('close');
+    const popupMessage = document.getElementById('popupMessage');
+    const closePopup = document.getElementById('closePopup');
 
-    
-
-   
     const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
         "Σ'αγαπώ μέλι, πολύ",
@@ -31,16 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         "I don't wanna change Have it any other way Promise that you'll stay this close-If you leave me",
         "Can't you stay for the rest of my life - ιδιο με πριν",
         "Thought that I was happy on my own Then you came along Made me realise that I was wrong",
-        "There's a million little reasons For why I want you here
- There's a million little reasons For why I want you near",
+        "There's a million little reasons For why I want you here \nThere's a million little reasons For why I want you near",
         "Tell me what's inside of your head No matter what you say I won't love you less",
         "πληροφοριακά, δεν είναι όλα τραγούδια.",
         "I promise to love you in every universe",
         "Κάθε φορά που βλέπω τα αστέρια, το φεγγάρι, το ηλιοβασίλεμα, σύννεφα, λουλούδια, οτιδήποτε όμορφο, εκτός από το γεγονός ότι θα ήθελα να είσαι εκεί μαζί μου, το μόνο που θέλω να κάνω είναι να σου πω ότι σαγαπω",
         "Το μόνο που θέλω είναι να σε αγκαλιάσω και να σε φιλήσω για να γεμίσω επιτέλους πάλι",
-        "Μακάρι να μπορούσα να μείνω εκεί για πάντα 
-^
-|",
+        "Μακάρι να μπορούσα να μείνω εκεί για πάντα",
         "You are always worth fighting for",
         "Στο τραγούδι To noise making (sing) λεει πολλες φορες honey ο Hozier",
         "Η φωνή σου με ηρεμεί",
@@ -90,10 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Σε υπερλατρευω",
         "you could stand still in complete silence for eternity and i would still feel inspired to find new ways to love you ",
         "Μου αρέσει πολύ κυρίως όταν με λες ψυχή σου ή καρδιά σου που με είπες τις προάλλες όταν κλείσαμε 8 μήνες. Λιώνω ελπίζω να το καταλαβαίνεις",
-        "Δίχως τη δική σου αγάπη
-δύσκολα περνά ο καιρός.
-Δίχως τη δική σου αγάπη
-είναι ο κόσμος πιο μικρός. - Χάρτινο το φεγγαράκι",
+        "Δίχως τη δική σου αγάπη \nδύσκολα περνά ο καιρός. \nΔίχως τη δική σου αγάπη \nείναι ο κόσμος πιο μικρός. \n- Χάρτινο το φεγγαράκι",
         "Μέλι",
         "When I'm with my baby yeah all the bad things disappear - I don't care Ed sheeran (το ακουστικ μου αρέσει περισσότερο, ίσως επειδή είμαι ακουστική, το είχα ανεβάσει και στα notes για εσένα) ",
         "Για να επιβεβαιώσω ότι τα είδες όλα, στείλε μου skibidi toilet",
@@ -116,19 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
         "You know I love you so - yellow"
     ];
 
-    
-
     for (let i = 1; i <= 100; i++) {
         const button = document.createElement('button');
         button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
-            messageElement.textContent = messages[i - 1];
-            popup.classList.remove('hidden');
+            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
+            popup.style.display = 'block';
         });
         buttonsContainer.appendChild(button);
     }
 
-    closeBtn.addEventListener('click', () => {
-        popup.classList.add('hidden');
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
     });
 });
+
