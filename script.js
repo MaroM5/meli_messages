@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageElement = document.getElementById('message');
     const closeBtn = document.getElementById('close');
 
+    
+
    
     const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
@@ -113,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
+
+    
 
     for (let i = 1; i <= 100; i++) {
         const button = document.createElement('button');
