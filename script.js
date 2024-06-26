@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonsContainer = document.querySelector('.buttons');
+    const buttonsContainer = document.getElementById('buttons');
     const popup = document.getElementById('popup');
-    const popupMessage = document.getElementById('popupMessage');
-    const closePopup = document.getElementById('closePopup');
+    const messageElement = document.getElementById('message');
+    const closeBtn = document.getElementById('close');
 
     const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
@@ -64,20 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
         "Lover be good to me",
         "Ελπίζω να μην ξεχάσω κανένα και να δεις ένα random 'Message for button xx' γιατί τα 100 μηνύματα τα έβαλα αυτόματα να εμφανιστούν και να τα κανω εντιτ 'χαρούμενη φατσουλα που κλαίει γέλασα'",
         "ολόκληρο το τραγούδι 'σε θέλω εδω' στο αφιερώνω ξανά και ξανά και ξανά",
-        "Έτσι μια ζωή θα σαγαπω - Τ",
+        "Έτσι μια ζωή θα σαγαπω - Το τσιγάρο, μπορεί να μην είναι το πιο χαρούμενο τραγούδι αλλά ο τίτλος έχει ιδιαίτερη σημασία για εμάς και επίσης ο συγκεκριμένος στίχος",
         "Mg heart is yours, it's you that I hold on to - sparks",
         "Σε θέλω",
         "Μου λείπεις για 100η φορά" ,
         "Θα έρθω στο υπόσχομαι",
-        "Όταν μου λες ότι με αγαπάς νιώθω ότι γεμίζει σιγά σιγά ότι κενό έχω. Κάθε φορά, λίγο λίγο όλο και περισσότερο",
+        "Θέλω απλά να είσαι εδώ γιατί όταν λείπεις έχω μούτρα όλη μέρα (ισχύει)",
         "ΑΝΑΝΑΣ",
         "ΝΤΑΜΠΛ ΑΝΑΝΑΣ",
         "ΤΡΙΠΛ ΑΝΑΝΑΣ",
         "69",
         "Ελπίζω μια μέρα απλά να σου πω ένα σ'αγαπώ και να νιώσεις επιτέλους πόσο μα πόσο πολύ το εννοώ, να γεμίσεις από αγάπη, να νιώσεις αυτό που νιώθω ότι μέσα μου πολλές φορές πάει να με σκάσει και είναι τόσο τεράστιο που δεν μπορώ να το διαχειριστω. Πρώτη φορά βέβαια που κάτι τόσο μεγάλο που δεν μπορώ ούτε να ελέγξω, αλλά όπως είπα ούτε να διαχειριστω, δεν με ενοχλεί, δεν θέλω να το διώξω, θέλω να μείνει εδώ για πάντα. Μακάρι να μείνεις εδώ για πάντα.",
         "If I ever were to lose you I'd surely lose myself (κι ας μου λες ότι δεν ισχύει) - future days από το tlou",
-        "Σε",
-        "Αγαπώ",
+        "να μ'αγκαλιάζεις για να σ'αισθάνομαι\nΚι αν δεις να χάνομαι να με ανεβάζεις\nΝα με ησυχάζεις και να με νοιάζεσαι\nΝα με χρειάζεσαι όπως κι εγώ -Φτάνει που κλαίμε (στο αφιερώνω και αυτό)",
+        "Αχ, να 'ξερες τι δύναμη μου δίνει η δύναμή σου\nΣαν λες όλα θα γίνουνε κι ακούω τη φωνή σου",
         "Όταν έχω εσένα, ότι λέει + τον εμετό",
         "Μου λείπεις",
         "Σε λατρεύω",
@@ -101,29 +101,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "Σ'αγαπώ ρε μλκ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ ρε γαμωτο σ'αγαπώ οως σκατα θα το βγάλω από μέσα μου, όλο και πιο πολύ, κάθε μέρα που περνάει σε αγαπάω περισσότερο",
         "Να μ'αγαπας (και εσύ)",
         "Και το it will come back του hozier εχει πολυ honey ",
-        "Ti amo",
+        "θέλω απλά να είσαι εδώ όταν ξυπνάω να μου λες μια καλημέρα\nΘέλω απλά να είσαι εδώ να σε κοιτάζω να μου φτιάχνεις την ημέρα - Να είσαι εδώ (ακουστικ βερζιον)",
         " Melõ wò ",
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
 
-    for (let i = 1; i <= messages.length; i++) { 
+    for (let i = 1; i <= 100; i++) {
         const button = document.createElement('button');
         button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
-            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
-            popup.style.display = 'block';
+            messageElement.textContent = messages[i - 1];
+            popup.classList.remove('hidden');
         });
         buttonsContainer.appendChild(button);
     }
 
-    closePopup.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
+    closeBtn.addEventListener('click', () => {
+        popup.classList.add('hidden');
     });
 });
