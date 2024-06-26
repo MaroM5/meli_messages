@@ -107,13 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "You know I love you so - yellow"
     ];
 
-
-    for (let i = 0; i < messages.length; i++) {
+    for (let i = 1; i <= 100; i++) {
         const button = document.createElement('button');
-        button.textContent = `Button ${i + 1}`;
+        button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
-
-            popupMessage.textContent = messages[i];
+            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
             popup.style.display = 'block';
         });
         buttonsContainer.appendChild(button);
@@ -122,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
-
 
     window.addEventListener('click', (event) => {
         if (event.target === popup) {
