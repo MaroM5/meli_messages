@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupMessage = document.getElementById('popupMessage');
     const closePopup = document.getElementById('closePopup');
 
-const messages = [
+    const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι: είναι randomized (όχι ότι έχει κάποια σημασία) :)",
         "Σ'αγαπώ μέλι, πολύ",
         "If you need to, darling, lean your weight to me We'll float away, but if we fall I only pray, don't fall away from me -I, carrion (Icarian) Hozier",
@@ -78,8 +78,6 @@ const messages = [
         "69",
         "Ελπίζω μια μέρα απλά να σου πω ένα σ'αγαπώ και να νιώσεις επιτέλους πόσο μα πόσο πολύ το εννοώ, να γεμίσεις από αγάπη, να νιώσεις αυτό που νιώθω ότι μέσα μου πολλές φορές πάει να με σκάσει και είναι τόσο τεράστιο που δεν μπορώ να το διαχειριστω. Πρώτη φορά βέβαια που κάτι τόσο μεγάλο που δεν μπορώ ούτε να ελέγξω, αλλά όπως είπα ούτε να διαχειριστω, δεν με ενοχλεί, δεν θέλω να το διώξω, θέλω να μείνει εδώ για πάντα. Μακάρι να μείνεις εδώ για πάντα.",
         "If I ever were to lose you I'd surely lose myself (κι ας μου λες ότι δεν ισχύει) - future days από το tlou",
-        "Σε",
-        "Αγαπώ",
         "Όταν έχω εσένα, ότι λέει + τον εμετό",
         "Μου λείπεις",
         "Σε λατρεύω",
@@ -87,7 +85,6 @@ const messages = [
         "you could stand still in complete silence for eternity and i would still feel inspired to find new ways to love you ",
         "Μου αρέσει πολύ κυρίως όταν με λες ψυχή σου ή καρδιά σου που με είπες τις προάλλες όταν κλείσαμε 8 μήνες. Λιώνω ελπίζω να το καταλαβαίνεις",
         "Δίχως τη δική σου αγάπη \nδύσκολα περνά ο καιρός. \nΔίχως τη δική σου αγάπη \nείναι ο κόσμος πιο μικρός. \n- Χάρτινο το φεγγαράκι",
-        "Μέλι",
         "Αχ, να 'ξερες τι δύναμη μου δίνει η δύναμή σου \nΣαν λες όλα θα γίνουνε κι ακούω τη φωνή σου"
         "When I'm with my baby yeah all the bad things disappear - I don't care Ed sheeran (το ακουστικ μου αρέσει περισσότερο, ίσως επειδή είμαι ακουστική, το είχα ανεβάσει και στα notes για εσένα) ",
         "Για να επιβεβαιώσω ότι τα είδες όλα, στείλε μου skibidi toilet",
@@ -105,14 +102,13 @@ const messages = [
         "Σ'αγαπώ ρε μλκ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ σ'αγαπώ ρε γαμωτο σ'αγαπώ οως σκατα θα το βγάλω από μέσα μου, όλο και πιο πολύ, κάθε μέρα που περνάει σε αγαπάω περισσότερο",
         "Να μ'αγαπας (και εσύ)",
         "Και το it will come back του hozier εχει πολυ honey ",
-        "Ti amo",
         " Melõ wò \n(σημαίνει σαγαπω σε μια περίεργη γλώσσα, στην έγραψα και στον ανανα με τα πολλά σαγαπω. Μοιάζει με μέλι για αυτό μου άρεσε πολύ και το κράτησα.)",
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
 
-    for (let i = 1; i <= 106; i++) {
-        const button = document.createElement('button');
+    for (let i = 1; i <= 100; i++) {
+         const button = document.createElement('button');
         button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
             popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
@@ -120,7 +116,6 @@ const messages = [
         });
         buttonsContainer.appendChild(button);
     }
-
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
