@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePopup = document.getElementById('closePopup');
 
     const messages = [
-
-    const messages = [
-        "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
+        "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι: είναι randomized (όχι ότι έχει κάποια σημασία) :)",
         "Σ'αγαπώ μέλι, πολύ",
         "If you need to, darling, lean your weight to me We'll float away, but if we fall I only pray, don't fall away from me -I, carrion (Icarian) Hozier",
         "Distance means SO little when someone means SO much. - Απο εκείνο το παιχνίδι",
@@ -60,14 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "I'll love you till the day that I die - πάλι ίδιο με πριν",
         "Το χαμόγελο σου είναι ότι πιο όμορφο ρε, σε σκέφτομαι τώρα στο αεροπλάνο και γελάω σαν χαζό",
         "I could eat that girl for lunch - Lunch Billie Eilish",
+        "You need a seat, I'll volunteer :) -το προηγουμενο"
         "Loving you is easy because you are you.",
         "Σε ευχαριστώ για όλα γενικά, σε αγαπάω σε λατρεύω",
         "Αν δεν μας χώριζε τόση απόσταση θα σου έγραφα σε χαρτάκια όλα αυτά και ότι σου στέλνω σε μηνύματα και θα στα έφερνα περιοδικά μαζί με λουλούδια. Ελπίζω κάποια μέρα να το κάνω.",
         "Lover be good to me",
         "Ελπίζω να μην ξεχάσω κανένα και να δεις ένα random 'Message for button xx' γιατί τα 100 μηνύματα τα έβαλα αυτόματα να εμφανιστούν και να τα κανω εντιτ 'χαρούμενη φατσουλα που κλαίει γέλασα'",
         "ολόκληρο το τραγούδι 'σε θέλω εδω' στο αφιερώνω ξανά και ξανά και ξανά",
-        "Έτσι μια ζωή θα σαγαπω - Τ",
-        "Mg heart is yours, it's you that I hold on to - sparks",
+        "Έτσι μια ζωή θα σαγαπω - Το τσιγάρο",
+        "Ωραίο τραγούδι το προηγούμενο αν και όχι πολύ χαρούμενο. Βέβαια το όνομα έχει ιδιαίτερη αξία για εμάς και αυτός ο στίχος επίσης.",
+        "My heart is yours, it's you that I hold on to - sparks",
         "Σε θέλω",
         "Μου λείπεις για 100η φορά" ,
         "Θα έρθω στο υπόσχομαι",
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Αχ, να 'ξερες τι δύναμη μου δίνει η δύναμή σου \nΣαν λες όλα θα γίνουνε κι ακούω τη φωνή σου"
         "When I'm with my baby yeah all the bad things disappear - I don't care Ed sheeran (το ακουστικ μου αρέσει περισσότερο, ίσως επειδή είμαι ακουστική, το είχα ανεβάσει και στα notes για εσένα) ",
         "Για να επιβεβαιώσω ότι τα είδες όλα, στείλε μου skibidi toilet",
+        "(όχι πλιζ μην το κάνεις)",
         "Άπειρα",
         "Ανεξαντλητα",
         "Απεριόριστα",
@@ -105,13 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "Να μ'αγαπας (και εσύ)",
         "Και το it will come back του hozier εχει πολυ honey ",
         "Ti amo",
-        " Melõ wò (σημαίνει σαγαπω σε μια περίεργη γλώσσα, στην έγραψα και στον ανανα με τα πολλά σαγαπω. Μοιάζει με μέλι για αυτό μου άρεσε πολύ και το κράτησα.)",
+        " Melõ wò \n(σημαίνει σαγαπω σε μια περίεργη γλώσσα, στην έγραψα και στον ανανα με τα πολλά σαγαπω. Μοιάζει με μέλι για αυτό μου άρεσε πολύ και το κράτησα.)",
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
-    ];
 
-    // Loop through all messages and create buttons
     messages.forEach((message, index) => {
         const button = document.createElement('button');
         button.textContent = `Button ${index + 1}`;
@@ -122,12 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonsContainer.appendChild(button);
     });
 
-    // Close popup
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
 
-    // Close popup when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === popup) {
             popup.style.display = 'none';
