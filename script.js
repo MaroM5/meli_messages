@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupMessage = document.getElementById('popupMessage');
     const closePopup = document.getElementById('closePopup');
 
-const messages = [
+    const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι: είναι randomized (όχι ότι έχει κάποια σημασία) :)",
         "Σ'αγαπώ μέλι, πολύ",
         "If you need to, darling, lean your weight to me We'll float away, but if we fall I only pray, don't fall away from me -I, carrion (Icarian) Hozier",
@@ -112,15 +112,15 @@ const messages = [
     ];
 
 
-    messages.forEach((message, index) => {
+    for (let i = 1; i <= 101; i++) { 
         const button = document.createElement('button');
-        button.textContent = `Button ${index + 1}`;
+        button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
-            popupMessage.textContent = message;
+            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
             popup.style.display = 'block';
         });
         buttonsContainer.appendChild(button);
-    });
+    }
 
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
@@ -132,3 +132,4 @@ const messages = [
         }
     });
 });
+
