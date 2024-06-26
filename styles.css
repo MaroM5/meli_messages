@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #ac31e7;
+    background-color: #e6e6fa; /* Pale purple background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* Adjust width to fit phone screens */
 }
 
 button {
