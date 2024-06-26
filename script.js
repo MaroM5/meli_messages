@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonsContainer = document.getElementById('buttons');
+    const buttonsContainer = document.querySelector('.buttons');
     const popup = document.getElementById('popup');
-    const messageElement = document.getElementById('message');
-    const closeBtn = document.getElementById('close');
-
+    const popupMessage = document.getElementById('popupMessage');
+    const closePopup = document.getElementById('closePopup');
     const messages = [
         "ΤΕΣΤ 1,θεωρητικά αυτό πρέπει να εμφανίζεται όταν πατάς το 1ο κουμπί, αν όχι είναι randomized, όχι ότι έχει κάποια σημασία :)",
         "Σ'αγαπώ μέλι, πολύ",
@@ -106,18 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
         "ΣΕ ΑΓΑΠΑΩ ΥΠΕΡΒΟΛΙΚΑ ΠΟΛΥ ΓΑΜΩ ΠΩΣ ΚΑΙ ΓΙΑΤΙ ΚΑΙ Α",
         "You know I love you so - yellow"
     ];
-
+    
     for (let i = 1; i <= 100; i++) {
         const button = document.createElement('button');
         button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
-            messageElement.textContent = messages[i - 1];
-            popup.classList.remove('hidden');
+            popupMessage.textContent = messages[i - 1] || `Message for Button ${i}`;
+            popup.style.display = 'block';
         });
         buttonsContainer.appendChild(button);
     }
 
-    closeBtn.addEventListener('click', () => {
-        popup.classList.add('hidden');
+   
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    
+    window.addEventListener('click', (event) => {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
     });
 });
