@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "You know I love you so - yellow"
     ];
 
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= messages.length; i++) { 
         const button = document.createElement('button');
         button.textContent = `Button ${i}`;
         button.addEventListener('click', () => {
